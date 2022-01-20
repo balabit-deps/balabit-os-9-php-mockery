@@ -1,0 +1,21 @@
+From: =?utf-8?q?David_Pr=C3=A9vot?= <taffit@debian.org>
+Date: Sat, 9 Oct 2021 14:52:38 -0400
+Subject: Compatibility with Python 3
+
+---
+ docs/conf.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index 901f040..6811e56 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -256,7 +256,7 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
+     import sphinx_rtd_theme
+     html_theme = 'sphinx_rtd_theme'
+     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+-    print sphinx_rtd_theme.get_html_theme_path()
++    print(sphinx_rtd_theme.get_html_theme_path())
+ 
+ # load PhpLexer
+ from sphinx.highlighting import lexers

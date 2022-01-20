@@ -1,0 +1,26 @@
+From: =?utf-8?q?David_Pr=C3=A9vot?= <taffit@debian.org>
+Date: Sat, 9 Oct 2021 15:09:48 -0400
+Subject: Drop lib-pcre from composer.json
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+phpabtp doesn’t handle it yet
+
+Bug-Debian: https://bugs.debian.org/996001
+---
+ composer.json | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/composer.json b/composer.json
+index 43caba8..25c72a9 100644
+--- a/composer.json
++++ b/composer.json
+@@ -32,7 +32,6 @@
+     ],
+     "require": {
+         "php": "^7.3 || ^8.0",
+-        "lib-pcre": ">=7.0",
+         "hamcrest/hamcrest-php": "^2.0.1"
+     },
+     "require-dev": {

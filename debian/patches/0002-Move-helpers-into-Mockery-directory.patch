@@ -1,0 +1,27 @@
+From: =?utf-8?q?David_Pr=C3=A9vot?= <taffit@debian.org>
+Date: Sun, 30 Jun 2019 16:28:16 -1000
+Subject: Move helpers into Mockery directory
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+We don’t want it lying around in /usr/share/php on its own.
+
+Forwarded: not-needed
+---
+ library/Mockery.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/library/Mockery.php b/library/Mockery.php
+index 95abd1b..9d02518 100644
+--- a/library/Mockery.php
++++ b/library/Mockery.php
+@@ -70,7 +70,7 @@ class Mockery
+      */
+     public static function globalHelpers()
+     {
+-        require_once __DIR__ . '/helpers.php';
++        require_once __DIR__ . '/Mockery/helpers.php';
+     }
+ 
+     /**

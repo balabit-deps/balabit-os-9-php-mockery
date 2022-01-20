@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+	phpabtpl composer.json > debian/autoload.php.tpl
+	phpab \
+		--template debian/autoload.php.tpl \
+		--output library/Mockery/autoload.php \
+		library
+	mkdir --parents vendor
+	phpabtpl --require mockery/mockery > debian/autoload.tests.php.tpl
+	phpab \
+		--template debian/autoload.tests.php.tpl \
+		--output vendor/autoload.php \
+		tests
+	cp -a library/helpers.php library/Mockery/helpers.php
+	# Build user documentation
+	$(MAKE) -C docs html
+
+override_dh_auto_clean:
+	dh_auto_clean -O--sourcedirectory=docs
+
+execute_after_dh_install:
+	rm -f debian/php-mockery/usr/share/php/helpers.php
+
+override_dh_auto_test:
+	phpunit --include-path library

@@ -1,0 +1,23 @@
+From: =?utf-8?q?David_Pr=C3=A9vot?= <taffit@debian.org>
+Date: Sun, 30 Jun 2019 15:43:58 -1000
+Subject: Use system path
+
+We use the library from the package, not the one installed via Composer.
+
+Forwarded: not-needed
+---
+ tests/Bootstrap.php | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/tests/Bootstrap.php b/tests/Bootstrap.php
+index 5da2f67..a868e28 100644
+--- a/tests/Bootstrap.php
++++ b/tests/Bootstrap.php
+@@ -55,6 +55,7 @@ if (DIRECTORY_SEPARATOR !== '/') {
+     $hamcrestRelativePath = str_replace('/', DIRECTORY_SEPARATOR, $hamcrestRelativePath);
+ }
+ $hamcrestPath = $composerVendorDirectory . DIRECTORY_SEPARATOR . $hamcrestRelativePath;
++$hamcrestPath = 'Hamcrest.php';
+ 
+ require_once $hamcrestPath;
+ 

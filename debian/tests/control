@@ -1,0 +1,3 @@
+Test-Command: mkdir -p vendor && phpabtpl --require mockery/mockery > debian/autoload.tests.php.tpl && phpab -t debian/autoload.tests.php.tpl -o vendor/autoload.php tests && phpunit
+Restrictions: allow-stderr, rw-build-tree
+Depends: php-mockery, php-redis, phpab, phpunit, pkg-php-tools (>= 1.41~)

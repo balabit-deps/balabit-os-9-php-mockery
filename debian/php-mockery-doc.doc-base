@@ -1,0 +1,8 @@
+Document: php-mockery-documentation
+Title: php-mockery Documentation
+Abstract: Developer documentation for Mockery mock object framework
+Section: Programming/PHP
+
+Format: HTML
+Index: /usr/share/doc/php-mockery/html/index.html
+Files: /usr/share/doc/php-mockery/html/*
